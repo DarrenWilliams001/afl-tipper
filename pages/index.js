@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import Logos from "../components/Logos";
 import MatchPrediction from "../components/MatchPrediction";
+import UpcomingRound from "../components/UpcomingRound";
 import styles from "../styles/Home.module.css";
 
 export async function getServerSideProps() {
@@ -45,6 +46,7 @@ function Home({ data }) {
         </nav>
         <section>
           <Logos window={windowSize} teamData={data.teams} />
+          <UpcomingRound teamData={data.teams} />
           <MatchPrediction teamData={data.teams} />
         </section>
       </main>

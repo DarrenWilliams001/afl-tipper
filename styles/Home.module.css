@@ -100,9 +100,41 @@
   text-align: center;
 }
 
+.upcomingContainer{
+  display: block;
+  text-align: center;
+  border-bottom: #ed1b2e solid 2px;
+  padding: 0 0 20px 0;
+}
+
+.upcomingList{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.upcomingGame{
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+}
+
+.upcomingGame>span{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.upcomingGame>span>h4{
+  margin: 10px 0;
+}
+
+.upcomingGame>span h3{
+  margin: 5px 0;
+  color: #ed1b2e;
+}
+
 
 .footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   padding: 20px;
   font-size: 12px;
