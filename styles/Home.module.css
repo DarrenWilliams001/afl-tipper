@@ -1,3 +1,10 @@
+.container {
+  position: relative;
+}
+.h2 {
+  font-size: 3rem;
+  margin: 5px 0;
+}
 .header {
   background-color: #ed1b2e;
   height: 80px;
@@ -13,9 +20,7 @@
 .logoList {
   width: 80px;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   margin: 10px;
 }
 .logos {
@@ -28,6 +33,83 @@
   border-bottom: 4px solid #ed1b2e;
 }
 
+.predictionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.formContainer > button {
+  width: 50%;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  width: 50%;
+}
+.formLabel {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.formGroup>select{
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  border: solid 1px whitesmoke;
+  color: #ed1b2e;
+  font-weight: bold;
+  text-align: center;
+}
+.button{
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: solid 2px whitesmoke;
+  max-width: 300px;
+}
+.button:hover{
+  background-color: lightgray;
+}
+.formGroup  option{
+  background-color: whitesmoke;
+  color: rgb(95, 95, 95);
+  font-weight: bold;
+}
+.predictionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.predictionContainer > h3 {
+  font-weight: 400;
+  text-align: center;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
 @media screen and (max-width: 1200px) {
   .logos {
     display: grid;
@@ -47,41 +129,11 @@
     display: block;
     margin: 5px auto;
   }
-}
-
-.predictionContainer {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.formContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  margin: 40px;
-}
-.formLabel {
-  font-size: 2rem;
-  margin: 20px 0;
-  text-align: center;
-}
-.predictionContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
+  .formContainer{
+    flex-wrap: nowrap;
+  }
+  .formGroup{
+    
+    width: 100%;
+  }
 }

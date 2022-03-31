@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useCallback } from "react/cjs/react.production.min";
 import Image from "next/image";
 import style from "../styles/Home.module.css";
 
@@ -82,6 +81,7 @@ function MatchPrediction(data) {
             ))}
           </select>
         </div>
+        <h3 className={style.h2}>VS</h3>
         <div className={style.formGroup}>
           <label className={style.formLabel} htmlFor="away">
             Away Team
@@ -100,10 +100,17 @@ function MatchPrediction(data) {
             ))}
           </select>
         </div>
-        {<button onClick={getTip}>Submit</button>}
+        {
+          <button className={style.button} onClick={getTip}>
+            Predict
+          </button>
+        }
       </div>
       <div className={style.predictionContainer}>
-        <h3>{prediction != "" ? prediction : null}</h3>
+        <h3>
+          <strong>Predicted Winner:</strong>{" "}
+          {prediction != "" ? prediction : null}
+        </h3>
         {prediction != ""
           ? data.teamData
               .filter((a) => a.name == prediction)

@@ -9,10 +9,10 @@ function Logos(data) {
         {data.teamData.map((team) => (
           <li className={styles.logoList} key={team.id}>
             <Image
-              layout="fixed"
+              layout={data.window < 660 ? "fixed" : "responsive"}
               src={"https://squiggle.com.au" + team.logo}
-              width={data.window < 660 ? 40 : 60}
-              height={data.window < 660 ? 40 : 60}
+              width={data.window < 660 ? 40 : 100}
+              height={data.window < 660 ? 40 : 100}
               alt={team.name}
             />
           </li>

@@ -7,18 +7,18 @@ import styles from "../styles/Home.module.css";
 export async function getServerSideProps() {
   const res = await fetch("https://api.squiggle.com.au/?q=teams");
   const data = await res.json();
-  const prevYear = await fetch(
-    "https://api.squiggle.com.au/?q=games&year=2021-original"
-  );
-  const prevYearData = await prevYear.json();
 
   return {
-    props: { data, prevYearData },
+    props: { data },
   };
 }
 
-function Home({ data, prevYearData }) {
+function Home({ data }) {
   const [windowSize, setWindowSize] = useState();
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -33,7 +33,7 @@ function Home({ data, prevYearData }) {
       <Head>
         <title>The Tipsy Tipper</title>
         <meta
-          name="description"
+          name="Unsure of who to tip, use the tipper, it's better than a guess"
           content="Something to help you pick your winning tips."
         />
         <link rel="icon" href="/favicon.ico" />
@@ -45,7 +45,7 @@ function Home({ data, prevYearData }) {
         </nav>
         <section>
           <Logos window={windowSize} teamData={data.teams} />
-          <MatchPrediction previousData={prevYearData} teamData={data.teams} />
+          <MatchPrediction teamData={data.teams} />
         </section>
       </main>
 
