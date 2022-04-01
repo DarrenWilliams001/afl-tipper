@@ -11,8 +11,8 @@ function Logos(data) {
             <Image
               layout={data.window < 660 ? "fixed" : "responsive"}
               src={"https://squiggle.com.au" + team.logo}
-              width={data.window < 660 ? 40 : 100}
-              height={data.window < 660 ? 40 : 100}
+              width={data.window < 660 ? 30 : 100}
+              height={data.window < 660 ? 30 : 100}
               alt={team.name}
             />
           </li>

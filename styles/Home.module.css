@@ -5,6 +5,10 @@
   font-size: 3rem;
   margin: 5px 0;
 }
+.yellowText{
+  color: #f1a900;
+  padding: 0;
+}
 .header {
   background-color: #ed1b2e;
   height: 80px;
@@ -13,6 +17,10 @@
   align-items: center;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+.mainContainer{
+  display: flex;
+  flex-wrap: wrap;
 }
 .logoContainer {
   background-color: white;
@@ -39,6 +47,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 .formContainer {
   display: flex;
@@ -94,6 +103,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
 }
 .predictionContainer > h3 {
   font-weight: 400;
@@ -103,31 +113,40 @@
 .upcomingContainer{
   display: block;
   text-align: center;
-  border-bottom: #ed1b2e solid 2px;
   padding: 0 0 20px 0;
+  width: 40%;
 }
 
 .upcomingList{
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
 }
 
 .upcomingGame{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding:10px;
+  font-size: 12px;
+  border: 1px white solid;
+  margin: 10px;
+  border-radius: 10px;
+}
+.upcomingGame p{
+  margin:0;
 }
 
-.upcomingGame>span{
+.upcomingGame>div{
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-.upcomingGame>span>h4{
+.upcomingGame>div>h4{
   margin: 10px 0;
 }
 
-.upcomingGame>span h3{
+.upcomingGame>div h3{
   margin: 5px 0;
   color: #ed1b2e;
 }
@@ -144,10 +163,10 @@
 }
 @media screen and (max-width: 1200px) {
   .logos {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    justify-items: center;
+      flex-wrap: wrap;
+  }
+  .upcomingContainer{
+    width: 100%;
   }
 }
 @media screen and (max-width: 660px) {
@@ -165,7 +184,11 @@
     flex-wrap: nowrap;
   }
   .formGroup{
-    
     width: 100%;
+  }
+  .upcomingList{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
   }
 }

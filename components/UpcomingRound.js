@@ -28,19 +28,42 @@ function UpcomingRound() {
 
   return (
     <div className={style.upcomingContainer}>
-      <h3>Round 3</h3>
+      {currentRoundData ? <h3>{currentRoundData.games[0].roundname}</h3> : null}
       <ul className={style.upcomingList}>
-        {currentRoundData.games.map((r) => {
-          return (
-            <li className={style.upcomingGame} key={r.id}>
-              <span>
-                <h4>{r.hteam}</h4> <h3>VS </h3>
-                <h4>{r.ateam}</h4>
-              </span>
-              <span>{r.venue}</span>
-            </li>
-          );
-        })}
+        {currentRoundData
+          ? currentRoundData.games.map((r) => {
+              return (
+                <li className={style.upcomingGame} key={r.id}>
+                  <div>
+                    <h4>
+                      {r.hteam}{" "}
+                      <p
+                        className={
+                          r.hscore > r.ascore ? style.yellowText : null
+                        }
+                      >
+                        {r.hbehinds != null ? r.hbehinds : 0}.
+                        {r.hgoals != null ? r.hgoals : 0}.{r.hscore}
+                      </p>
+                    </h4>
+                    <h3>VS </h3>
+                    <h4>
+                      {r.ateam}{" "}
+                      <p
+                        className={
+                          r.ascore > r.hscore ? style.yellowText : null
+                        }
+                      >
+                        {r.abehinds != null ? r.abehinds : 0}.
+                        {r.agoals != null ? r.agoals : 0}.{r.ascore}
+                      </p>
+                    </h4>
+                  </div>
+                  <span>{r.venue}</span>
+                </li>
+              );
+            })
+          : null}
       </ul>
     </div>
   );

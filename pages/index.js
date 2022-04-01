@@ -46,8 +46,10 @@ function Home({ data }) {
         </nav>
         <section>
           <Logos window={windowSize} teamData={data.teams} />
-          <UpcomingRound teamData={data.teams} />
-          <MatchPrediction teamData={data.teams} />
+          <div className={styles.mainContainer}>
+            <UpcomingRound teamData={data.teams} />
+            <MatchPrediction teamData={data.teams} />
+          </div>
         </section>
       </main>
 
